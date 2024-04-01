@@ -4,14 +4,14 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/Theme-provider";
 import { MovieProvider } from "@/context/ContextProvider";
 import { Header } from "@/components/Header";
-import { Separator } from "@/components/ui/separator";
+
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "About That Movie",
-  description: "website about movies",
+  description: "Website about movies",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <MovieProvider>
-        <body className={inter.className}>
+        <body className={inter.variable}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
