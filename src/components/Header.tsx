@@ -5,13 +5,20 @@ import { Clapperboard } from "lucide-react";
 import { MobileNav } from "./MobileNav";
 import { sidebarLinks } from "@/constants";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export function Header() {
   return (
     <header>
       <nav className="fixed top-0 flex w-full items-center justify-between border-b-2 bg-background px-6 py-4 lg:px-10">
         <Link href={"/"} className="flex items-center gap-1" aria-label="Logo">
-          <Clapperboard size={32} className="max-sm:hidden" />
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={80}
+            height={80}
+            className="max-sm:hidden"
+          />
           <p className="text-center text-lg font-extrabold md:text-[26px] ">
             About That Movie
           </p>
