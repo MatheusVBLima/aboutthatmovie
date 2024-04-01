@@ -12,6 +12,7 @@ export default function Footer() {
         <Link
           href={"https://developer.themoviedb.org/docs/getting-started"}
           className="text-blue-500"
+          target="_blank"
         >
           TMDB
         </Link>
