@@ -1,6 +1,6 @@
 "use client";
-import React, { useContext } from "react";
-import { Button } from "./ui/button";
+import React, { use, useContext, useEffect } from "react";
+
 import Image from "next/image";
 import { MovieContext } from "@/context/ContextProvider";
 import {
@@ -12,15 +12,19 @@ import {
   CardTitle,
 } from "./ui/card";
 
-export default function Main() {
-  const { getTopRatedMovies, topRatedMovies } = useContext(MovieContext);
+export function UpcomingMovies() {
+  const { getUpcomingMovies, upcomingMovies } = useContext(MovieContext);
   const imagesURL = process.env.NEXT_PUBLIC_IMG;
-  console.log(topRatedMovies);
+
+  useEffect(() => {
+    getUpcomingMovies();
+  }, []);
+
   return (
-    <main className="flex w-full flex-col px-2">
-      <Button onClick={getTopRatedMovies}>Get Top Rated Movies</Button>
+    <main className="flex w-full flex-col gap-10 px-2">
+      <h1 className="text-center text-2xl font-semibold">Upcoming Movies</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {topRatedMovies.map((movie) => (
+        {upcomingMovies.map((movie) => (
           <Card key={movie.id} className="flex flex-col">
             <CardHeader>
               <CardTitle>

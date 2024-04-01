@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/Theme-provider";
-
 import { MovieProvider } from "@/context/ContextProvider";
+import { Header } from "@/components/Header";
+import { Separator } from "@/components/ui/separator";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,11 +29,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {/* <div className="grid grid-cols-[16rem_1fr] h-screen">
-              <Sidebar />
-              
-            </div> */}
-            <main>{children}</main>
+            <Header />
+            <main className="px-6 pb-6 pt-28 max-md:pb-14 sm:px-1">
+              {children}
+            </main>
+            <Footer />
           </ThemeProvider>
         </body>
       </MovieProvider>
