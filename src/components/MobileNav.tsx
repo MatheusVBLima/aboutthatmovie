@@ -15,7 +15,11 @@ export function MobileNav() {
           <Menu size={36} className="cursor-pointer lg:hidden" />
         </SheetTrigger>
         <SheetContent side={"left"}>
-          <Link href={"/"} className="flex items-center gap-1">
+          <Link
+            href={"/"}
+            className="flex items-center gap-1"
+            aria-label="logo"
+          >
             <Clapperboard size={32} className="max-sm:size-10" />
             <p className="text-[26px] font-extrabold text-secondary-foreground">
               About That Movie
@@ -29,6 +33,7 @@ export function MobileNav() {
                   return (
                     <SheetClose asChild key={link.route}>
                       <Link
+                        aria-label="navigation button"
                         href={link.route}
                         key={link.label}
                         className={cn(

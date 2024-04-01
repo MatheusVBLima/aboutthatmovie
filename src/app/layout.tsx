@@ -29,11 +29,15 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            <main className="px-6 pb-6 pt-28 max-md:pb-14 sm:px-1">
-              {children}
-            </main>
-            <Footer />
+            <div className="min-h-screen">
+              <Header />
+              <main className="px-2 pb-6 pt-28 max-md:pb-14 sm:px-1">
+                {children}
+              </main>
+              <div className="fixed bottom-0 w-full">
+                <Footer />
+              </div>
+            </div>
           </ThemeProvider>
         </body>
       </MovieProvider>
