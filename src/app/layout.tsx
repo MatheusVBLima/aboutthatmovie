@@ -29,12 +29,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="min-h-screen">
+            <div className="flex min-h-screen flex-col">
               <Header />
               <main className="px-2 pb-6 pt-28 max-md:pb-14 sm:px-1">
                 {children}
               </main>
-              <div className="fixed bottom-0 w-full">
+              <div className="mt-auto flex">
                 <Footer />
               </div>
             </div>

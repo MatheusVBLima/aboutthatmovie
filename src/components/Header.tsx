@@ -11,8 +11,8 @@ export function Header() {
     <header>
       <nav className="fixed top-0 flex w-full items-center justify-between border-b-2 bg-background px-6 py-4 lg:px-10">
         <Link href={"/"} className="flex items-center gap-1" aria-label="Logo">
-          <Clapperboard size={32} className="max-sm:size-10" />
-          <p className="text-[26px] font-extrabold max-sm:hidden">
+          <Clapperboard size={32} className="max-sm:hidden" />
+          <p className="text-center text-lg font-extrabold md:text-[26px] ">
             About That Movie
           </p>
         </Link>

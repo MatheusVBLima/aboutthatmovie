@@ -15,16 +15,14 @@ export function MobileNav() {
           <Menu size={36} className="cursor-pointer lg:hidden" />
         </SheetTrigger>
         <SheetContent side={"left"}>
-          <Link
-            href={"/"}
-            className="flex items-center gap-1"
-            aria-label="logo"
-          >
-            <Clapperboard size={32} className="max-sm:size-10" />
-            <p className="text-[26px] font-extrabold text-secondary-foreground">
-              About That Movie
-            </p>
-          </Link>
+          <SheetClose asChild>
+            <Link href={"/"} className="flex items-end gap-1" aria-label="logo">
+              <Clapperboard size={32} className="max-sm:size-10" />
+              <p className="text-center text-xl font-extrabold text-secondary-foreground">
+                About That Movie
+              </p>
+            </Link>
+          </SheetClose>
           <div className="flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto">
             <SheetClose asChild>
               <section className="flex h-full flex-col gap-6 pt-16 text-secondary-foreground">
