@@ -42,7 +42,7 @@ export function MovieProvider({ children }: MovieProviderProps) {
   const [upcomingMovies, setUpcomingMovies] = useState<Movie[]>([]);
 
   async function getTopRatedMovies() {
-    const response = await api.get("/movie/top_rated?language=pt-BR");
+    const response = await api.get("/movie/top_rated?language=pt-BR&page=1");
     const data = response.data.results;
     setTopRatedMovies(data);
     return data;

@@ -1,6 +1,5 @@
 "use client";
-import React, { use, useContext, useEffect } from "react";
-import { Button } from "./ui/button";
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import { MovieContext } from "@/context/ContextProvider";
 import {
@@ -11,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import { Calendar } from "lucide-react";
 
 export function TopRatedMovies() {
   const { getTopRatedMovies, topRatedMovies } = useContext(MovieContext);
@@ -27,10 +27,14 @@ export function TopRatedMovies() {
         {topRatedMovies.map((movie) => (
           <Card key={movie.id} className="flex flex-col">
             <CardHeader>
-              <CardTitle>
-                {movie.title} - {movie.release_date}
+              <CardTitle className="flex items-center justify-between">
+                <span className="text-lg">{movie.title}</span>
+                <span className="flex items-center gap-2">
+                  <Calendar size={24} />
+                  {movie.release_date}
+                </span>
               </CardTitle>
-              <CardDescription className="text-secondary-foreground">
+              <CardDescription className="text-justify text-secondary-foreground">
                 {movie.overview}
               </CardDescription>
             </CardHeader>

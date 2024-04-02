@@ -1,7 +1,6 @@
 import React from "react";
 import { ThemeSwitcher } from "./Theme-switcher";
 import Link from "next/link";
-import { Clapperboard } from "lucide-react";
 import { MobileNav } from "./MobileNav";
 import { sidebarLinks } from "@/constants";
 import { Button } from "./ui/button";
@@ -19,7 +18,7 @@ export function Header() {
             height={80}
             className="max-sm:hidden"
           />
-          <p className="text-center text-lg font-extrabold md:text-[26px] ">
+          <p className="text-center text-2xl font-extrabold md:text-[26px] ">
             About That Movie
           </p>
         </Link>

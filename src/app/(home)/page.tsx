@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Home() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40">
+    <div className="w-full py-12 md:py-24 lg:py-32 xl:py-40">
       <div className=" px-4 md:px-6">
         <div className="flex flex-col items-center justify-center gap-8 space-y-4 text-center md:flex-row">
           <div className="space-y-2">
@@ -21,6 +21,6 @@ export default function Home() {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
