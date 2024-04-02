@@ -6,6 +6,7 @@ import { MovieProvider } from "@/context/ContextProvider";
 import { Header } from "@/components/Header";
 
 import Footer from "@/components/Footer";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,13 +31,15 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="flex min-h-screen flex-col">
-              <Header />
-              <main className="px-2 pb-6 pt-20 max-md:pb-14 sm:px-1">
-                {children}
-              </main>
-              <div className="mt-auto flex">
-                <Footer />
-              </div>
+              <ScrollArea className="">
+                <Header />
+                <main className="flex flex-1 items-center px-2 pb-6 pt-20 max-md:pb-14 sm:px-1">
+                  {children}
+                </main>
+                <div className="mt-auto flex">
+                  <Footer />
+                </div>
+              </ScrollArea>
             </div>
           </ThemeProvider>
         </body>
